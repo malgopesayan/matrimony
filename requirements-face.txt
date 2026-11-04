@@ -1,0 +1,3 @@
+# OPTIONAL: real face matching (needs cmake + C++ build tools for dlib)
+face_recognition
+numpy
