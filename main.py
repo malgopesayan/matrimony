@@ -106,7 +106,12 @@ def score(p, c):
 
 def candidates(u):
     return q("select * from users where role='user' and status='active' and gender<>? and id<>?", (u["gender"], u["id"]))
-
+@app.get("/")
+def home():
+    return {
+        "status": "success",
+        "message": "Matrimony Backend is Running!"
+    }
 # ---------- auth ----------
 @app.post("/api/register")
 async def register(name: str = Form(...), email: str = Form(...), phone: str = Form(...), password: str = Form(...),
